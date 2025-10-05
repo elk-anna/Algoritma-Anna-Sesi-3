@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class CaloriesCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter minutes of running: ");
+        double running = input.nextDouble();
+
+        System.out.print("Enter minutes of push-ups: ");
+        double pushups = input.nextDouble();
+
+        System.out.print("Enter minutes of planks: ");
+        double planks = input.nextDouble();
+
+        double runningCal = (60.0 / 5.0) * running;   // 60 cal per 5 minutes
+        double pushupsCal = (200.0 / 30.0) * pushups; // 200 cal per 30 minutes
+        double planksCal = 5.0 * planks;              // 5 cal per minute
+
+        double total = runningCal + pushupsCal + planksCal;
+
+        System.out.println("\nCalories burned:");
+        System.out.printf("Running: %.2f cal\n", runningCal);
+        System.out.printf("Push-ups: %.2f cal\n", pushupsCal);
+        System.out.printf("Planks: %.2f cal\n", planksCal);
+        System.out.printf("Total: %.2f cal\n", total);
+
+        input.close();
+    }
+}
